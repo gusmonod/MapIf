@@ -102,7 +102,7 @@ PlaceSearchModule = {
 			            		.addClass("media-right media-middle btn-group-sm")
 			            		.append($("<span></span>")
 			            			.addClass("btn btn-success btn-raised btn-fab fab")
-			            			.attr("title", "En faire ma position actuelle")
+			            			.attr("title", "Add a new stop")
 					            	.attr("data-toggle","modal")
 					            	.attr("data-target", "#positionModal")
 					            	.click(function(e){

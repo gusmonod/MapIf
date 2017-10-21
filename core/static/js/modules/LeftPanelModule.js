@@ -22,7 +22,7 @@ LeftPanelModule = {
 	open : function(){
 		$("#left-panel").removeClass("closePanel");
 		$("#left-panel .widget-pane-toggle-button-container .btn").focusout().blur()
-			.attr('data-original-title', "Réduire le panneau latéral")
+			.attr('data-original-title', "Close the side panel")
 			.find(".glyphicon").removeClass("glyphicon-triangle-right")
 			.addClass("glyphicon-triangle-left");
 
@@ -33,7 +33,7 @@ LeftPanelModule = {
 	close : function(){
 		$("#left-panel").addClass("closePanel");
 		$("#left-panel .widget-pane-toggle-button-container .btn").focusout().blur()
-			.attr('data-original-title', "Étendre le panneau latéral")
+			.attr('data-original-title', "Open the side panel")
 			.find(".glyphicon").removeClass("glyphicon-triangle-left")
 			.addClass("glyphicon-triangle-right");
 

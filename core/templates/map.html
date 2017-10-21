@@ -3,13 +3,13 @@
 <div id="left-panel" class="closePanel">
 	<div id="left-panel-content">
 		<div id="left-panel-form">
-			<h4>Trouver un lieu</h4>
+			<h4>Find a place</h4>
 			<div class="form-group label-floating">
-				<label class="control-label" for="addr-search-input-city">Ville</label>
+				<label class="control-label" for="addr-search-input-city">City</label>
 				<input class="form-control" id="addr-search-input-city" type="text">
 			</div>
 			<div class="form-group label-floating">
-				<label class="control-label" for="addr-search-input-country">Pays</label>
+				<label class="control-label" for="addr-search-input-country">Country</label>
 				<input class="form-control" id="addr-search-input-country" type="text">
 			</div>
 			<a href="#" id="addr-search-submit" class="fab btn btn-default btn-fab btn-raised"><i class="material-icons">search</i></a>
@@ -18,7 +18,7 @@
 			<div id="search-results"></div>
 		</div>
 	</div>
-	<div class="widget-pane-toggle-button-container"><button type="button" class="btn btn-raised btn-xs" data-toggle="tooltip" data-placement="right" title="&Eacute;tendre le panneau latéral" data-original-title="Tooltip on right"><span class="glyphicon glyphicon-triangle-right"></span></button> </div>
+	<div class="widget-pane-toggle-button-container"><button type="button" class="btn btn-raised btn-xs" data-toggle="tooltip" data-placement="right" title="Open the side panel" data-original-title="Tooltip on right"><span class="glyphicon glyphicon-triangle-right"></span></button> </div>
 </div>
 <div id="mymap"></div>
 {% endblock %}
@@ -38,11 +38,7 @@
 		},
 		users:[
 		{% for u in lu.users %}
-			{
-				firstname:"{{ u.firstname }}",
-				lastname:"{{ u.lastname }}",
-				promo:"{{ u.promo }}"
-			}{% if not loop.last %},{% endif %}
+			{},
 		{% endfor %}
 		]
 	});

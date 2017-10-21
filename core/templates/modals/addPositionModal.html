@@ -4,26 +4,27 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="position">Définir un nouvelle position</h4>
+					<h4 class="modal-title" id="position">Add a new stop</h4>
 				</div>
 				<div class="modal-body">
 				{% for loc in user_locations[-5:] | reverse %}
 					{% if loop.first %}
-					<h5>Votre position actuelle est {{ loc.location.city }} {{ loc.location.country }} depuis le {{ loc.timestamp.strftime('%d %B %Y') }}</h5>
+					<h5>You added {{ loc.location.city }}, {{ loc.location.country }} on {{ loc.timestamp.strftime('%d %B %Y') }}</h5>
 					{% else %}
 						{% if loop.last and loop.index is equalto 5 %}
 					<p>...</p>
 						{% else %}
-					<p>Vous étiez à {{ loc.location.city }} {{ loc.location.country }} le {{ loc.timestamp.strftime('%d %B %Y') }}</p>
+					<p>You added {{ loc.location.city }}, {{ loc.location.country }} on the {{ loc.timestamp.strftime('%d %B %Y') }}</p>
 						{% endif %}
 					{% endif %}
 				{% else %}
-					<p>Vous n'avez pas encore défini votre position</p>
+					<p>No stop added yet</p>
 				{% endfor %}
 
-					<p class="well">Voulez vous ajouter <strong><span id="position-add-city">city</span> <span id="position-add-country">COUNTRY</span></strong> à votre historique de déplacement ?
+					<p class="well">Would you like to add <strong><span id="position-add-city">city</span> <span id="position-add-country">COUNTRY</span></strong> to your travel map?
 					</p>
 					<div class="form-group">
+            <!--
 						<label for="position-add-reason" class="control-label">Pour quelle raison êtes vous là ?</label>
 						<select class="form-control" id="position-add-reason" name="reason" required="required">
 							<option value="no" selected>Je ne sais pas...</option>
@@ -33,11 +34,13 @@
 							<option value="job">Emploi</option>
 							<option value="vacation">Vacances</option>
 						</select>
+          -->
+            <input type="hidden" id="position-add-reason" name="reason" required value="no">
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-					<button id="change-current-position-validate" type="button" class="btn btn-primary">Changer ma position actuelle</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="change-current-position-validate" type="button" class="btn btn-primary">Add a new stop</button>
 				</div>
 			</div>
 		</div>

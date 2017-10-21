@@ -114,11 +114,13 @@ var MapModule = {
 	createMarker : function(locationItem){
 		var location = locationItem.location;
 		var users = locationItem.users;
-		var popupText = "<h4>"+users.length+" Insalien"+((users.length>1)?"s":"")
-			+" à "+location.city+" "+location.country.toUpperCase()+"</h4><div class='popupUsers'>";
+		var popupText = "<h4>"+users.length+" stop"+((users.length>1)?"s":"")
+			+" at "+location.city+", "+location.country.toUpperCase()+"</h4><div class='popupUsers'>";
+    /*
 		for (var j = 0; j < users.length; j++) {
-			popupText += UtilsModule.toTitleCase(users[j].firstname)+" "+UtilsModule.toTitleCase(users[j].lastname)+" <small> - IF "+users[j].promo+"</small><br>";
+			popupText += UtilsModule.toTitleCase("a name")+" "+UtilsModule.toTitleCase("a last name")+" <br>";
 		};
+    */
 		popupText += "</div>";
 
 		var marker = L.marker([location.lat, location.lon],{icon: this.newLocationIcon()});

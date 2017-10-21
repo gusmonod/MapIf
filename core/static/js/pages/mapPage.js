@@ -4,6 +4,7 @@ $(document).one("settings-loaded",function(){
 	MapModule.init();
 
 	var promos = [];
+  /*
 	locations.forEach(function(val1, key1, arr1){
 		val1.users.forEach(function(user, key2, arr2){
 			if(promos.indexOf(user.promo) === -1){
@@ -11,6 +12,7 @@ $(document).one("settings-loaded",function(){
 			}
 		});
 	});
+  */
 
 	promos.sort().forEach(function(year){
 		MapModule.addPromoOverlayToControl(year);
